@@ -51,13 +51,6 @@ public class LoginPanel extends BasicPanel {
                     error("login.failed");
                 }
             }
-
-//            @Override
-//            public void updateAjaxAttributes(AjaxRequestAttributes attributes) {
-//                super.updateAjaxAttributes(attributes);
-//                attributes.getAjaxCallListeners().add(new BlockUiListener());
-//            }
-
         };
         loginForm.add(loginLink);
     }
