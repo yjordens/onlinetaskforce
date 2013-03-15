@@ -13,6 +13,7 @@
         <module>modules/otf-common</module>
         <module>modules/otf-business</module>
         <module>modules/otf-persistence</module>
+        <module>otf-database</module>
     </modules>
 
     <organization>
