@@ -127,4 +127,8 @@ public class Gebruiker extends AbstractAuditPojo{
         String passwordMd5 = DigestUtils.shaHex(password);
         return StringUtils.equals(this.username, username) && StringUtils.equals(this.wachtwoord, passwordMd5);
     }
+
+    public String getFullName() {
+        return getVoornaam() + "" + getNaam();
+    }
 }

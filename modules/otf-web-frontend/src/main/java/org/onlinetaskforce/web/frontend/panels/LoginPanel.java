@@ -33,7 +33,7 @@ public class LoginPanel extends BasicPanel {
     public LoginPanel(String id) {
         super(id);
 
-        add(new Label("status", Model.of("u bent nog niet aangemeld")));
+        add(new Label("status", Model.of("Je bent nog niet aangemeld!")));
         today = new Date();
         add(new Label("dateTime", Model.of(today)));
         loginForm = new LoginForm("loginForm");
