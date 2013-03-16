@@ -11,6 +11,7 @@ import org.apache.wicket.model.StringResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.resource.JQueryPluginResourceReference;
 import org.onlinetaskforce.web.frontend.application.OtfApplication;
 import org.onlinetaskforce.web.frontend.components.menu.Menu;
 
@@ -21,8 +22,10 @@ import org.onlinetaskforce.web.frontend.components.menu.Menu;
 public class BasicPage extends WebPage {
     private static final CssResourceReference OTF_PAGE_CSS = new CssResourceReference(HomeLoginPage.class, "../css/style.css");
 
-    private static final JavaScriptResourceReference OTF_PAGE_JS = new JavaScriptResourceReference(HomeLoginPage.class, "../js/modernizr-1.5.min.js");
-    private static final JavaScriptResourceReference OTF_PAGE_JS_JQUERY_BLOCKUI = new JavaScriptResourceReference(HomeLoginPage.class, "../js/jquery.blockUI.js");
+    private static final JavaScriptResourceReference OTF_PAGE_JS_JQUERY_BLOCKUI = new JQueryPluginResourceReference(HomeLoginPage.class, "../js/jquery.blockUI.js");
+    private static final JavaScriptResourceReference OTF_PAGE_JS_MODERNIZR = new JavaScriptResourceReference(HomeLoginPage.class, "../js/modernizr-1.5.min.js");
+    private static final JavaScriptResourceReference OTF_PAGE_JS_SOOPERFISH = new JavaScriptResourceReference(HomeLoginPage.class, "../js/jquery.sooperfish.js");
+    private static final JavaScriptResourceReference OTF_PAGE_JS_EASING_SOOPER = new JavaScriptResourceReference(HomeLoginPage.class, "../js/jquery.easing-sooper.js");
 
     protected Menu menu;
 
@@ -55,8 +58,10 @@ public class BasicPage extends WebPage {
     @Override
     public void renderHead(IHeaderResponse response) {
       response.render(CssHeaderItem.forReference(OTF_PAGE_CSS));
-      response.render(JavaScriptReferenceHeaderItem.forReference(OTF_PAGE_JS));
-      response.render(JavaScriptReferenceHeaderItem.forReference(OTF_PAGE_JS_JQUERY_BLOCKUI));
+        response.render(JavaScriptReferenceHeaderItem.forReference(OTF_PAGE_JS_JQUERY_BLOCKUI));
+      response.render(JavaScriptReferenceHeaderItem.forReference(OTF_PAGE_JS_MODERNIZR));
+      response.render(JavaScriptReferenceHeaderItem.forReference(OTF_PAGE_JS_EASING_SOOPER));
+      response.render(JavaScriptReferenceHeaderItem.forReference(OTF_PAGE_JS_SOOPERFISH));
     }
 
     public Menu getMenu() {

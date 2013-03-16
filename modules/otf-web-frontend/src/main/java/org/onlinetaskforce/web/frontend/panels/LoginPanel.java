@@ -2,7 +2,7 @@ package org.onlinetaskforce.web.frontend.panels;
 
 import org.apache.wicket.Session;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
@@ -23,7 +23,7 @@ public class LoginPanel extends BasicPanel {
     private String status;
     private Date today;
     private LoginForm loginForm;
-    AjaxLink loginLink;
+    AjaxButton loginBtn;
 
     /**
      * Initializes the view
@@ -37,13 +37,14 @@ public class LoginPanel extends BasicPanel {
         today = new Date();
         add(new Label("dateTime", Model.of(today)));
         loginForm = new LoginForm("loginForm");
+        loginForm.setOutputMarkupId(true);
         add(loginForm);
 
-        loginLink = new AjaxLink("login-link") {
+        loginBtn = new AjaxButton("login-btn") {
             @Override
-            public void onClick(AjaxRequestTarget target) {
-                OtfWebSession session = (OtfWebSession)Session.get();
-                //session.setGebruiker(new Gebruiker());
+            protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+                super.onSubmit(target, form);
+                OtfWebSession session = (OtfWebSession) Session.get();
 
                 if(session.login(loginForm.getUsername(), loginForm.getPassword())) {
                     setResponsePage(HomePage.class);
@@ -52,7 +53,7 @@ public class LoginPanel extends BasicPanel {
                 }
             }
         };
-        loginForm.add(loginLink);
+        loginForm.add(loginBtn);
     }
 
     /**

@@ -7,5 +7,5 @@ import org.onlinetaskforce.persistence.domain.Gebruiker;
  * @since 10/03/13
  */
 public interface GebruikerService {
-    public Gebruiker getGebruiker(String naam, String password);
+    public Gebruiker getGebruiker(String naam);
 }

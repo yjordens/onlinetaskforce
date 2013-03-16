@@ -9,10 +9,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../../otf-web-frontend/src/main/webapp" relative="/" />
         </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/../../otf-web-frontend/src/main/java" />
-          <root url="file://$MODULE_DIR$/../../otf-web-frontend/src/main/resources" />
-        </sourceRoots>
       </configuration>
     </facet>
     <facet type="wicketforge" name="Wicket">
@@ -87,8 +83,7 @@
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.15.0-GA" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:4.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: javassist:javassist:3.12.1.GA" level="project" />
-    <orderEntry type="library" name="Maven: com.oracle:xdb6:11.2.0.3.0" level="project" />
-    <orderEntry type="library" name="Maven: com.oracle:xmlparserv2:11.2.0.2.0-ov" level="project" />
+    <orderEntry type="library" name="Maven: postgresql:postgresql:8.3-603.jdbc4" level="project" />
     <orderEntry type="module" module-name="otf-business" />
     <orderEntry type="module" module-name="otf-persistence" />
     <orderEntry type="library" name="Maven: org.apache.wicket:wicket-core:6.6.0" level="project" />
@@ -109,7 +104,6 @@
     <orderEntry type="library" name="Maven: org.wicketstuff:wicketstuff-security-hive:1.5.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.oracle:ojdbc6:11.2.0.3.0" level="project" />
   </component>
 </module>
 

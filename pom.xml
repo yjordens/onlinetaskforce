@@ -9,11 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
+        <module>otf-database</module>
         <module>modules/otf-web-frontend</module>
         <module>modules/otf-common</module>
         <module>modules/otf-business</module>
         <module>modules/otf-persistence</module>
-        <module>otf-database</module>
     </modules>
 
     <organization>
@@ -45,7 +45,7 @@
         <hibernate.version>4.1.7.Final</hibernate.version>
         <javassist.version>3.12.1.GA</javassist.version>
         <hsqldb.version>2.2.8</hsqldb.version>
-        <oracle.version>11.2.0.3.0</oracle.version>
+        <postgresql.version>8.3-603.jdbc4</postgresql.version>
     </properties>
 
     <dependencyManagement>
@@ -343,24 +343,10 @@
             <version>${javassist.version}</version>
         </dependency>
         <dependency>
-            <!--Maven command to add oracle driver to Maven Repository-->
-            <!--mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.2.0 -Dpackaging=jar -Dfile=ojdbc6.jar -DgeneratePom=true-->
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc6</artifactId>
-            <version>${oracle.version}</version>
-            <scope>test</scope>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>xdb6</artifactId>
-            <version>${oracle.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>xmlparserv2</artifactId>
-            <version>11.2.0.2.0-ov</version>
-        </dependency>
-
     </dependencies>
 
     <build>

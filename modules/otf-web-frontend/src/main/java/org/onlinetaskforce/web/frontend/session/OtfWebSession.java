@@ -1,7 +1,10 @@
 package org.onlinetaskforce.web.frontend.session;
 
+import org.apache.wicket.injection.Injector;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
+import org.apache.wicket.spring.injection.annot.SpringBean;
+import org.onlinetaskforce.business.services.GebruikerService;
 import org.onlinetaskforce.persistence.domain.Gebruiker;
 
 /**
@@ -9,6 +12,8 @@ import org.onlinetaskforce.persistence.domain.Gebruiker;
  * @since 10/03/13
  */
 public class OtfWebSession extends WebSession{
+    @SpringBean
+    private GebruikerService gebruikerService;
     private Gebruiker gebruiker;
 
     /**
@@ -18,6 +23,7 @@ public class OtfWebSession extends WebSession{
      */
     public OtfWebSession(Request request) {
         super(request);
+        Injector.get().inject(this);
     }
 
     public Gebruiker getGebruiker() {
@@ -29,6 +35,7 @@ public class OtfWebSession extends WebSession{
     }
 
     public boolean login(String username, String password) {
+        gebruiker = gebruikerService.getGebruiker(username);
         if (gebruiker != null && gebruiker.match(username, password)) {
             return true;
         }

@@ -5,8 +5,6 @@
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -64,9 +62,7 @@
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.15.0-GA" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:4.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: javassist:javassist:3.12.1.GA" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.oracle:ojdbc6:11.2.0.3.0" level="project" />
-    <orderEntry type="library" name="Maven: com.oracle:xdb6:11.2.0.3.0" level="project" />
-    <orderEntry type="library" name="Maven: com.oracle:xmlparserv2:11.2.0.2.0-ov" level="project" />
+    <orderEntry type="library" name="Maven: postgresql:postgresql:8.3-603.jdbc4" level="project" />
   </component>
 </module>
 

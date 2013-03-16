@@ -86,8 +86,6 @@ public abstract class BaseModalWindow extends ModalWindow implements ContentPane
      *
      * @param settings the javascript settings
      * @return the settings
-     * @see be.vlaanderen.ov.discimus.frontend.web.window.BaseModalWindow#getLeftRightMarginWidth() and
-     * @see be.vlaanderen.ov.discimus.frontend.web.window.BaseModalWindow#getTopBottomMarginWidth() as well.
      */
     @Override
     protected AppendingStringBuffer postProcessSettings(AppendingStringBuffer settings) {

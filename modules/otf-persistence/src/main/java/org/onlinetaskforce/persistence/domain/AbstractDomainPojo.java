@@ -9,7 +9,7 @@ import javax.persistence.Version;
 import java.io.Serializable;
 
 /**
- * This is the abstract base class for all domain pojo's of the discimus project.
+ * This is the abstract base class for all domain pojo's of the otf project.
  */
 @MappedSuperclass
 public abstract class AbstractDomainPojo implements Serializable {

@@ -1,5 +1,6 @@
 package org.onlinetaskforce.persistence.domain;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 
 import javax.persistence.Column;
@@ -73,11 +74,6 @@ public class Gebruiker extends AbstractAuditPojo{
      */
     @Column(name = "actief", nullable = false)
     private Boolean actief;
-    /**
-     * The Role of the Gebruiker, this determines the level of access to the Discumus Frontend
-     */
-    @Column(name = "rol", nullable = false)
-    private String rol;
 
     public Boolean getActief() {
         return actief;
@@ -127,15 +123,8 @@ public class Gebruiker extends AbstractAuditPojo{
         this.wachtwoord = wachtwoord;
     }
 
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-
     public boolean match(String username, String password) {
-        return StringUtils.equals(this.username, username) && StringUtils.equals(this.wachtwoord, password);
+        String passwordMd5 = DigestUtils.shaHex(password);
+        return StringUtils.equals(this.username, username) && StringUtils.equals(this.wachtwoord, passwordMd5);
     }
 }
