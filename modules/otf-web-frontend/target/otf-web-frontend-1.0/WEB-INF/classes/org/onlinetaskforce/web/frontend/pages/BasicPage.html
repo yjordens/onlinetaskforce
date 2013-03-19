@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:wicket="http://wicket.apache.org">
+
+<head>
+  <title wicket:id="pageTitle">Online task force</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap CSS Toolkit styles -->
+    <link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap.min.css" />
+    <!-- Generic page styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Bootstrap styles for responsive website layout, supporting different screen sizes -->
+    <link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap-responsive.min.css" />
+    <!-- Bootstrap Image Gallery styles -->
+    <link rel="stylesheet" href="http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css" />
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="css/jquery.fileupload-ui.css" />
+    <!-- CSS adjustments for browsers with JavaScript disabled -->
+    <noscript><link rel="stylesheet" href="css/jquery.fileupload-ui-noscript.css" /></noscript>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Online task force<span class="logo_colour"> OTF</span></a></h1>
+          <h2>Simpel. Tijdgenoot. ICT Partner.</h2>
+        </div>
+      </div>
+      <nav>
+        <div wicket:id="menu_container"/>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+            <div wicket:id="user"/>
+        </div>
+      </div>
+      <div id="content" wicket:id="content-container">
+          <wicket:child />
+      </div>
+    </div>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</body>
+</html>

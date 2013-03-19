@@ -4,11 +4,15 @@
 <body>
     <wicket:panel>
         <ul class="sf-menu" id="nav">
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="page.html">A Page</a></li>
-          <li><a href="another_page.html">Another Page</a></li>
-          <li><a href="#">Example Drop Down</a>
+          <li class="selected"><a wicket:id="home-menu" href="#">Home</a></li>
+          <li><a wicket:id="gebruiker-menu" href="#">Gebruikersbeheer</a>
+              <ul>
+                  <li><a wicket:id="create-user-menu" href="#">Aanmaken</a></li>
+              </ul>
+          </li>
+          <li><a href="page.html">Diensten</a></li>
+          <li><a href="another_page.html">Contact</a></li>
+          <li><a href="#">Andere</a>
             <ul>
               <li><a href="#">Drop Down One</a></li>
               <li><a href="#">Drop Down Two</a>

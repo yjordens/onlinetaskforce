@@ -1,4 +1,4 @@
-@font-face { 
+@font-face {
   font-family: Yanone Kaffeesatz; 
     src: url('../fonts/YanoneKaffeesatz-Regular.eot'); 
     src: local("Yanone Kaffeesatz"), url('../fonts/YanoneKaffeesatz-Regular.ttf'); 
@@ -33,7 +33,7 @@ img {
   border: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {  
+h1, h2, h3, h4, h5, h6 {
   color: #362C20;
   letter-spacing: 0em;
   padding: 0 0 5px 0;
@@ -75,6 +75,48 @@ h6 {
   padding: 5px 0 25px 0;
 }
 
+.form-header {
+    padding: 20px;
+    margin: -20px -20px 20px -20px;
+    border-bottom: 1px solid #558199;
+
+    background-color: #B5DCF1;
+    background-image: -moz-linear-gradient(top, #B5DCF1, #83B0C9); /* FF3.6 */
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #B5DCF1),color-stop(1, #83B0C9)); /* Saf4+, Chrome */
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#B5DCF1', EndColorStr='#83B0C9'); /* IE6,IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#B5DCF1', EndColorStr='#83B0C9')"; /* IE8 */
+
+    color: #313131;
+    text-shadow: 0px 1px 0px #CAE9F9;
+
+    -moz-box-shadow: 0px 1px 0px #fff;
+    -webkit-box-shadow: 0px 1px 0px #fff;
+    box-shadow: 0px 1px 0px #fff;
+}
+
+.form-header span {
+    font-size: 14px;
+    display: block;
+}
+
+.form-header a {
+    color: #000;
+}
+
+footer {
+    display: block;
+    padding-top: 20px;
+    margin: 20px -20px -20px -20px;
+    background-color: #C4C3C4;
+
+    font-size: 70%;
+}
+
+.form-header p {
+    padding: 0px 20px 0px 20px;
+    margin: 0px;
+}
+
 a, a:hover {  
   outline: none;
   text-decoration: underline;
@@ -96,7 +138,7 @@ ul {
   margin: 2px 0 22px 17px;
 }
 
-ul li {  
+ul li {
   list-style-type: circle;
   margin: 0 0 6px 0; 
   padding: 0 0 4px 5px;
@@ -406,7 +448,8 @@ html body ul.sf-menu ul ul {
 }
 
 /* Framework for proper showing/hiding/positioning */
-ul.sf-menu,ul.sf-menu * { 
+ul.sf-menu,ul.sf-menu * {
+  height: 44px;
   margin: 0;
   padding: 0;
 }
@@ -427,7 +470,7 @@ ul.sf-menu li:hover {
   visibility: inherit; /* fixes IE7 'sticky bug' */ 
 }
 
-ul.sf-menu a { 
+ul.sf-menu a {
   display: block;
   position: relative;
 }
@@ -441,7 +484,7 @@ ul.sf-menu ul {
 }
   
 ul.sf-menu ul a { 
-  zoom: 1; /* IE6/7 fix */ 
+  zoom: 1; /* IE6/7 fix */
 }
 
 ul.sf-menu ul li { 
@@ -498,14 +541,45 @@ ul#nav ul {
   border: 1px solid #ddd;
 }
 
-ul#nav li a { 
-  padding:9px 25px 10px 25px;
-  font: 155% 'Yanone Kaffeesatz',helvetica,arial,verdana,sans;
+ul#nav li a {
+  padding:10px 20px 2px 20px;
+  font: 14px, 'Yanone Kaffeesatz',helvetica,arial,verdana,sans;
   text-shadow: 1px 1px #FFF;
   text-decoration:none;
   color: #444;
+  height: 32px;
 }
 
 ul#nav li a:hover, ul#nav li a:focus, ul#nav li.selected { 
   background: #FFF;
+}
+
+.file-upload-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    font-size: 23px;
+    direction: ltr;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    vertical-align: middle;
+    -webkit-box-align: baseline;
+    color: inherit;
+    text-align: center;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    font: -webkit-small-control;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-writing-mode: horizontal-tb;
 }
