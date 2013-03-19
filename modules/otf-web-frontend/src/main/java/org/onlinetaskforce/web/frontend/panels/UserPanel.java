@@ -4,7 +4,11 @@ import org.apache.wicket.Session;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.image.Image;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.resource.ByteArrayResource;
+import org.apache.wicket.request.resource.PackageResourceReference;
+import org.onlinetaskforce.persistence.domain.Gebruiker;
 import org.onlinetaskforce.web.frontend.pages.HomeLoginPage;
 import org.onlinetaskforce.web.frontend.session.OtfWebSession;
 
@@ -18,7 +22,8 @@ import java.util.Date;
 public class UserPanel extends BasicPanel {
     private String status;
     private Date today;
-    AjaxLink signOutLnk;
+    private AjaxLink signOutLnk;
+    private Image picure;
 
     /**
      * Initializes the view
@@ -32,6 +37,15 @@ public class UserPanel extends BasicPanel {
         add(new Label("status", Model.of("Welkom " + session.getGebruiker().getFullName())));
         today = new Date();
         add(new Label("dateTime", Model.of(today)));
+
+        Gebruiker gebruiker = session.getGebruiker();
+        if (gebruiker.getPicture() == null) {
+            picure = new Image("picture", new PackageResourceReference(UserPanel.class, "../images/no-img-available.jpg"));//todo yvan test
+        } else {
+            ByteArrayResource byteArrayResource = new ByteArrayResource("image", session.getGebruiker().getPicture());
+            picure = new Image("picture", byteArrayResource);
+        }
+        add(picure);
 
         signOutLnk = new AjaxLink("sign-out-lnk") {
 
@@ -58,6 +72,22 @@ public class UserPanel extends BasicPanel {
 
     public void setToday(Date today) {
         this.today = today;
+    }
+
+    public AjaxLink getSignOutLnk() {
+        return signOutLnk;
+    }
+
+    public void setSignOutLnk(AjaxLink signOutLnk) {
+        this.signOutLnk = signOutLnk;
+    }
+
+    public Image getPicure() {
+        return picure;
+    }
+
+    public void setPicure(Image picure) {
+        this.picure = picure;
     }
 }
 

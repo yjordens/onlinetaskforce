@@ -9,6 +9,7 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.ResourceModel;
 import org.onlinetaskforce.common.exceptions.BusinessException;
+import org.onlinetaskforce.web.frontend.forms.BasicForm;
 
 import java.util.List;
 

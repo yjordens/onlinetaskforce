@@ -20,6 +20,11 @@ public class GebruikerServiceImpl extends BaseOtfServiceImpl implements Gebruike
         return gebruikerDao.getGebruiker(naam);
     }
 
+    @Override
+    public void savePicture(Gebruiker gebruiker) {
+        gebruikerDao.saveOrUpdate(gebruiker);
+    }
+
     @Autowired
     public void setGebruikerDao(GebruikerDao gebruikerDao) {
         this.gebruikerDao = gebruikerDao;

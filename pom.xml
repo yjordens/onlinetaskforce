@@ -28,6 +28,8 @@
         <wicketstuff.version>1.4.19</wicketstuff.version>
         <slf4j.version>1.6.1</slf4j.version>
         <log4j.version>1.2.16</log4j.version>
+        <!-- java j2ee-->
+        <javax.servlet.version>2.5</javax.servlet.version>
         <!--  Commons -->
         <commons.io.version>2.0.1</commons.io.version>
         <commons.lang.version>2.6</commons.lang.version>

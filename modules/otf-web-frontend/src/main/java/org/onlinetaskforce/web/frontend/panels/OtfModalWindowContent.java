@@ -9,6 +9,7 @@ import org.apache.wicket.markup.html.form.FormComponent;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.IModel;
 import org.onlinetaskforce.common.exceptions.BusinessException;
+import org.onlinetaskforce.web.frontend.forms.BasicForm;
 import org.onlinetaskforce.web.frontend.window.FeedbackComponentAware;
 
 import java.util.List;

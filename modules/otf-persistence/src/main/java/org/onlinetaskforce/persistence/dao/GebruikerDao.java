@@ -1,7 +1,6 @@
 package org.onlinetaskforce.persistence.dao;
 
 import org.onlinetaskforce.persistence.domain.Gebruiker;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author jordens

@@ -11,11 +11,17 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.onlinetaskforce.business.services.GebruikerService;
 import org.onlinetaskforce.web.frontend.authorisation.AuthorisationStrategy;
+import org.onlinetaskforce.web.frontend.fileupload.FileManageResourceReference;
+import org.onlinetaskforce.web.frontend.fileupload.FileUploadResourceReference;
 import org.onlinetaskforce.web.frontend.listeners.BlockUiListener;
 import org.onlinetaskforce.web.frontend.pages.HomeLoginPage;
 import org.onlinetaskforce.web.frontend.pages.HomePage;
+import org.onlinetaskforce.web.frontend.pages.gebruikersbeheer.CreateUserPage;
 import org.onlinetaskforce.web.frontend.session.OtfWebSession;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -26,6 +32,9 @@ import java.util.Locale;
  * Application object for your web application. If you want to run this application without deploying, run the Start class.
  */
 public class OtfApplication extends WebApplication {
+    private FileUploadResourceReference fileUpload;
+    private FileManageResourceReference fileDownload;
+
     @Override
     public Session newSession(Request request, Response response) {
         return new OtfWebSession(request);
@@ -36,6 +45,7 @@ public class OtfApplication extends WebApplication {
      * BusinessException prefix used in resource bundles
      */
     public static final String BUSINESSEXCEPTION_PREFIX = "BusinessException";
+    public static final String BASE_FOLDER = "/temp";
 
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
@@ -76,6 +86,16 @@ public class OtfApplication extends WebApplication {
 
         mountPage("/home-login/", getHomePage());
         mountPage("/home/", HomePage.class);
+        mountPage("/home/gebruikersbeheer", CreateUserPage.class);
+
+        fileUpload = new FileUploadResourceReference(BASE_FOLDER);
+        ApplicationContext context = new ClassPathXmlApplicationContext("/spring/applicationcontext.xml");
+        fileUpload.setGebruikerService(context.getBean(GebruikerService.class));
+        fileDownload = new FileManageResourceReference(BASE_FOLDER);
+
+        mountResource("/home/fileManager", fileDownload);
+		mountResource("/home/fileUpload", fileUpload);
+
 	}
 
 

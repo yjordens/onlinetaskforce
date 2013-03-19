@@ -4,10 +4,9 @@ import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.CssResourceReference;
-import org.onlinetaskforce.web.frontend.components.menu.Menu;
 import org.onlinetaskforce.web.frontend.panels.LoginPanel;
 
-public class HomeLoginPage extends BasicPage {
+public class HomeLoginPage extends AbstractBasicPage {
 	private static final long serialVersionUID = 1L;
     private static final CssResourceReference OTF_LOGIN_CSS = new CssResourceReference(HomeLoginPage.class, "../css/login.css");
 
@@ -20,9 +19,6 @@ public class HomeLoginPage extends BasicPage {
     @Override
     protected void onInitialize() {
         super.onInitialize();
-
-        menu = new Menu("menu_container");
-        add(menu);
 
         loginPanel = new LoginPanel("login");
         add(loginPanel);

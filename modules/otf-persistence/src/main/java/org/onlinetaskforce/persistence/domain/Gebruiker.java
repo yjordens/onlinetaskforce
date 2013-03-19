@@ -74,6 +74,8 @@ public class Gebruiker extends AbstractAuditPojo{
      */
     @Column(name = "actief", nullable = false)
     private Boolean actief;
+    @Column(name = "picture", nullable = true)
+    private byte[] picture;
 
     public Boolean getActief() {
         return actief;
@@ -121,6 +123,14 @@ public class Gebruiker extends AbstractAuditPojo{
 
     public void setWachtwoord(String wachtwoord) {
         this.wachtwoord = wachtwoord;
+    }
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
     }
 
     public boolean match(String username, String password) {
